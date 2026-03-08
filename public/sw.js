@@ -1,13 +1,15 @@
 // ─── GHMC Weather Monitor — Service Worker ───────────────────
 // CACHE_VERSION is auto-stamped by vite.config.js on every build.
 // Manually bump it here only if deploying without `npm run build`.
-const CACHE_VERSION = 'v2026-03-08-1772973916040'
+const CACHE_VERSION = 'v2026-03-08-1772994018658'
 const CACHE_NAME = `ghmc-weather-${CACHE_VERSION}`
 
 const STATIC_ASSETS = [
   '/',
   '/index.html',
   '/manifest.json',
+  '/ghmc_map.geojson',
+  '/stations.json',
 ]
 
 // Hosts that must always be fetched live — never cached
@@ -16,6 +18,12 @@ const BYPASS_HOSTS = [
   'allorigins.win',
   'corsproxy.io',
   'api.scraperapi.com',
+  'docs.google.com',        // Google Sheets CSV
+]
+
+// Local paths that must always be fetched live — never cached
+const BYPASS_PATHS = [
+  '/api/weather',           // Vercel serverless
 ]
 
 // ── Install: pre-cache shell ──────────────────────────────────
@@ -30,7 +38,7 @@ self.addEventListener('install', event => {
   )
 })
 
-// ── Activate: purge old caches ────────────────────────────────
+// ── Activate: purge old app caches (tile cache is preserved) ──
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys()
@@ -49,11 +57,11 @@ self.addEventListener('activate', event => {
   )
 })
 
-// ── Fetch: network-first for API, cache-first for assets ──────
+// ── Fetch ─────────────────────────────────────────────────────
 self.addEventListener('fetch', event => {
   const url = new URL(event.request.url)
 
-  // Always bypass cache for data endpoints
+  // Always bypass — external data hosts
   if (BYPASS_HOSTS.some(h => url.hostname.includes(h))) {
     event.respondWith(
       fetch(event.request).catch(() =>
@@ -61,6 +69,33 @@ self.addEventListener('fetch', event => {
           headers: { 'Content-Type': 'application/json' }
         })
       )
+    )
+    return
+  }
+
+  // Always bypass — local API paths
+  if (BYPASS_PATHS.some(p => url.pathname.startsWith(p))) {
+    event.respondWith(
+      fetch(event.request).catch(() =>
+        new Response(JSON.stringify({ error: 'offline' }), {
+          headers: { 'Content-Type': 'application/json' }
+        })
+      )
+    )
+    return
+  }
+
+  // Tile-aware caching — separate cache, survives version bumps
+  if (url.hostname.includes('cartocdn.com')) {
+    event.respondWith(
+      caches.match(event.request).then(cached => {
+        if (cached) return cached
+        return fetch(event.request).then(response => {
+          const clone = response.clone()
+          caches.open('ghmc-tiles').then(cache => cache.put(event.request, clone))
+          return response
+        })
+      })
     )
     return
   }

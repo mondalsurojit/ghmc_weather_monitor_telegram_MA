@@ -63,7 +63,7 @@ function buildPopupHTML(station, activeMetric) {
       </div>
 
       <div style="font-size:9px;color:#334155;text-align:right;font-family:'JetBrains Mono',monospace;">
-        ${station.Date ?? ''}
+        ${station.reading_time ?? ''}
       </div>
     </div>
   `
