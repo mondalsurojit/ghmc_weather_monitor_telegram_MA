@@ -1,7 +1,7 @@
 // ─── GHMC Weather Monitor — Service Worker ───────────────────
 // CACHE_VERSION is auto-stamped by vite.config.js on every build.
 // Manually bump it here only if deploying without `npm run build`.
-const CACHE_VERSION = 'v2026-03-08-1773002739555'
+const CACHE_VERSION = 'v2026-03-08-1773003626860'
 const CACHE_NAME = `ghmc-weather-${CACHE_VERSION}`
 
 const STATIC_ASSETS = [
