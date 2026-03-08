@@ -1,0 +1,1258 @@
+[
+ {
+   "client_id": 30032,
+   "District": "Hyderabad",
+   "Mandal": "Bandlaguda",
+   "Location": "Indiranagar Community Hall",
+   "latitude": 17.323479,
+   "longitude": 78.47543
+ },
+ {
+   "client_id": 10002,
+   "District": "Rangareddy",
+   "Mandal": "Rajendranagar",
+   "Location": "Sivaramapalle",
+   "latitude": 17.327787,
+   "longitude": 78.424416
+ },
+ {
+   "client_id": 30129,
+   "District": "Hyderabad",
+   "Mandal": "Asifnagar",
+   "Location": "Allabada Water Reservoir",
+   "latitude": 17.380026,
+   "longitude": 78.45543
+ },
+ {
+   "client_id": 30092,
+   "District": "Rangareddy",
+   "Mandal": "Rajendranagar",
+   "Location": "Sub Staion: Mailardevpally: Sivarampally",
+   "latitude": 17.314978,
+   "longitude": 78.44579
+ },
+ {
+   "client_id": 30026,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Balanagar",
+   "Location": "Mothinagar Ward Office: Moosapet",
+   "latitude": 17.456184,
+   "longitude": 78.42213
+ },
+ {
+   "client_id": 10308,
+   "District": "Rangareddy",
+   "Mandal": "Serilingampally",
+   "Location": "Guchibowli",
+   "latitude": 17.470789,
+   "longitude": 78.32597
+ },
+ {
+   "client_id": 30023,
+   "District": "Hyderabad",
+   "Mandal": "Bahadurpura",
+   "Location": "Kishanbagh Govt High School",
+   "latitude": 17.359867,
+   "longitude": 78.441505
+ },
+ {
+   "client_id": 30181,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Balanagar",
+   "Location": "Old sultan nagar Community hall",
+   "latitude": 17.455076,
+   "longitude": 78.432915
+ },
+ {
+   "client_id": 30047,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Kapra",
+   "Location": "Kushaiguda old ward office: Cherlapalli",
+   "latitude": 17.481941,
+   "longitude": 78.57446
+ },
+ {
+   "client_id": 30121,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Uppal",
+   "Location": "Maruthi Nagar Mahila Sabha Center",
+   "latitude": 17.375456,
+   "longitude": 78.541
+ },
+ {
+   "client_id": 30041,
+   "District": "Rangareddy",
+   "Mandal": "Saroornagar",
+   "Location": "Lingojiguda Ward Office",
+   "latitude": 17.346848,
+   "longitude": 78.534645
+ },
+ {
+   "client_id": 11202,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Kukatpally",
+   "Location": "GHMC Office: Kukatpally",
+   "latitude": 17.470352,
+   "longitude": 78.42025
+ },
+ {
+   "client_id": 30154,
+   "District": "Hyderabad",
+   "Mandal": "Asifnagar",
+   "Location": "Ward Office, Karwan, Beside UPHC",
+   "latitude": 17.37611,
+   "longitude": 78.44199
+ },
+ {
+   "client_id": 30151,
+   "District": "Hyderabad",
+   "Mandal": "Bandlaguda",
+   "Location": "HMWSSB office RIYASATNAGAR",
+   "latitude": 17.34567,
+   "longitude": 78.5053
+ },
+ {
+   "client_id": 30143,
+   "District": "Hyderabad",
+   "Mandal": "Amberpet",
+   "Location": "Azampura Ward Office",
+   "latitude": 17.3719,
+   "longitude": 78.49105
+ },
+ {
+   "client_id": 30140,
+   "District": "Hyderabad",
+   "Mandal": "Maredpally",
+   "Location": "New Mettuguda Primary School",
+   "latitude": 17.433207,
+   "longitude": 78.5194
+ },
+ {
+   "client_id": 30167,
+   "District": "Rangareddy",
+   "Mandal": "Saroornagar",
+   "Location": "Ghmc Transport Building",
+   "latitude": 17.35851,
+   "longitude": 78.53636
+ },
+ {
+   "client_id": 30048,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Kapra",
+   "Location": "Maheshnagar Ward Office: Dr.A.S.Rao Nagar",
+   "latitude": 17.479095,
+   "longitude": 78.55789
+ },
+ {
+   "client_id": 30145,
+   "District": "Hyderabad",
+   "Mandal": "Bahadurpura",
+   "Location": "Rooplal Bazar Community Hall",
+   "latitude": 17.35075,
+   "longitude": 78.47138
+ },
+ {
+   "client_id": 30161,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Balanagar",
+   "Location": "Bowenpally ward office",
+   "latitude": 17.476713,
+   "longitude": 78.478775
+ },
+ {
+   "client_id": 30122,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Uppal",
+   "Location": "New Nagole Welfare asscoiation",
+   "latitude": 17.373291,
+   "longitude": 78.55604
+ },
+ {
+   "client_id": 30165,
+   "District": "Rangareddy",
+   "Mandal": "Hayathnagar",
+   "Location": "Defence Colony Comm Hall, Hayath Nagar",
+   "latitude": 17.318613,
+   "longitude": 78.61246
+ },
+ {
+   "client_id": 30127,
+   "District": "Hyderabad",
+   "Mandal": "Himayatnagar",
+   "Location": "GHMC Head Office",
+   "latitude": 17.407806,
+   "longitude": 78.4756
+ },
+ {
+   "client_id": 30130,
+   "District": "Hyderabad",
+   "Mandal": "Asifnagar",
+   "Location": "Mehdipatnam Navodaya Comm Hall",
+   "latitude": 17.387674,
+   "longitude": 78.43624
+ },
+ {
+   "client_id": 11206,
+   "District": "Hyderabad",
+   "Mandal": "Charminar",
+   "Location": "Sardarmahal (zonal commissioner office)",
+   "latitude": 17.360828,
+   "longitude": 78.475945
+ },
+ {
+   "client_id": 30104,
+   "District": "Rangareddy",
+   "Mandal": "Serilingampally",
+   "Location": "Raidurga Ward Office: Gachibowli",
+   "latitude": 17.413263,
+   "longitude": 78.39223
+ },
+ {
+   "client_id": 30180,
+   "District": "Hyderabad",
+   "Mandal": "Khairatabad",
+   "Location": "Old Ward Office ,Rahmathnagar",
+   "latitude": 17.440569,
+   "longitude": 78.42143
+ },
+ {
+   "client_id": 10935,
+   "District": "Sangareddy",
+   "Mandal": "Ramachandrapuram",
+   "Location": "BHEL Factory",
+   "latitude": 17.493917,
+   "longitude": 78.28337
+ },
+ {
+   "client_id": 30036,
+   "District": "Hyderabad",
+   "Mandal": "Shaikpet",
+   "Location": "GHMC Welfare Office: Shaikpet",
+   "latitude": 17.404505,
+   "longitude": 78.3968
+ },
+ {
+   "client_id": 10976,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Malkajgiri",
+   "Location": "ESS Malkajgiri",
+   "latitude": 17.455574,
+   "longitude": 78.529594
+ },
+ {
+   "client_id": 30123,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Uppal",
+   "Location": "Community Hall, Habsiguda JSN Colony",
+   "latitude": 17.405237,
+   "longitude": 78.54177
+ },
+ {
+   "client_id": 11513,
+   "District": "Rangareddy",
+   "Mandal": "Rajendranagar",
+   "Location": "Rajendranagar (ARS)",
+   "latitude": 17.3245,
+   "longitude": 78.39933
+ },
+ {
+   "client_id": 30110,
+   "District": "Rangareddy",
+   "Mandal": "Serilingampally",
+   "Location": "PJR Stadium: Chandanagar",
+   "latitude": 17.48883,
+   "longitude": 78.324394
+ },
+ {
+   "client_id": 30118,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Uppal",
+   "Location": "Ward Office, Mallapur",
+   "latitude": 17.44585,
+   "longitude": 78.57423
+ },
+ {
+   "client_id": 11925,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Alwal",
+   "Location": "ESS Macha Bollaram",
+   "latitude": 17.51851,
+   "longitude": 78.50965
+ },
+ {
+   "client_id": 30105,
+   "District": "Rangareddy",
+   "Mandal": "Serilingampally",
+   "Location": "Kakatiya Hills: Madhapur",
+   "latitude": 17.441746,
+   "longitude": 78.39735
+ },
+ {
+   "client_id": 30111,
+   "District": "Rangareddy",
+   "Mandal": "Serilingampally",
+   "Location": "Khajaguda Sports Complex Gachibowli",
+   "latitude": 17.418304,
+   "longitude": 78.36669
+ },
+ {
+   "client_id": 30070,
+   "District": "Hyderabad",
+   "Mandal": "Maredpally",
+   "Location": "Seethapalmandi Kindi Basthi Comm Hall",
+   "latitude": 17.426594,
+   "longitude": 78.51323
+ },
+ {
+   "client_id": 30082,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Quthbullapur",
+   "Location": "Community Hall, Aadharsh Nagar",
+   "latitude": 17.48504,
+   "longitude": 78.44661
+ },
+ {
+   "client_id": 10995,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Balanagar",
+   "Location": "ESS Balanagar",
+   "latitude": 17.47051,
+   "longitude": 78.433495
+ },
+ {
+   "client_id": 30053,
+   "District": "Hyderabad",
+   "Mandal": "Khairatabad",
+   "Location": "Yousufguda Zonal Commissioner officr",
+   "latitude": 17.437014,
+   "longitude": 78.431984
+ },
+ {
+   "client_id": 30114,
+   "District": "Hyderabad",
+   "Mandal": "Shaikpet",
+   "Location": "CMTC Premises: Banjara Hills",
+   "latitude": 17.414005,
+   "longitude": 78.433624
+ },
+ {
+   "client_id": 11192,
+   "District": "Hyderabad",
+   "Mandal": "Secunderabad",
+   "Location": "Mondamarket",
+   "latitude": 17.43351,
+   "longitude": 78.497826
+ },
+ {
+   "client_id": 30164,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Uppal",
+   "Location": "GHMC Zonal Office, Uppal",
+   "latitude": 17.40107,
+   "longitude": 78.57119
+ },
+ {
+   "client_id": 10012,
+   "District": "Hyderabad",
+   "Mandal": "Musheerabad",
+   "Location": "Musheerabad (chilkalguda)",
+   "latitude": 17.42439,
+   "longitude": 78.501
+ },
+ {
+   "client_id": 30107,
+   "District": "Rangareddy",
+   "Mandal": "Serilingampally",
+   "Location": "Urban Health Centre: Hafeezpet",
+   "latitude": 17.48676,
+   "longitude": 78.35687
+ },
+ {
+   "client_id": 30112,
+   "District": "Hyderabad",
+   "Mandal": "Shaikpet",
+   "Location": "Tolichowki Dalith Bhavan",
+   "latitude": 17.40362,
+   "longitude": 78.41953
+ },
+ {
+   "client_id": 30055,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Kukatpally",
+   "Location": "Community Hall, CBCID Colony: KPHB",
+   "latitude": 17.497599,
+   "longitude": 78.38032
+ },
+ {
+   "client_id": 30117,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Uppal",
+   "Location": "Rajiv Nagar Community Hall",
+   "latitude": 17.460602,
+   "longitude": 78.57033
+ },
+ {
+   "client_id": 30064,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Malkajgiri",
+   "Location": "Madhusudhan Nagar Comm.Hall: Anandbagh",
+   "latitude": 17.447325,
+   "longitude": 78.53216
+ },
+ {
+   "client_id": 30171,
+   "District": "Hyderabad",
+   "Mandal": "Himayatnagar",
+   "Location": "TSRTC Employee Building Vidya Nagar",
+   "latitude": 17.403694,
+   "longitude": 78.505135
+ },
+ {
+   "client_id": 30148,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Uppal",
+   "Location": "Moosarambagh Ward office",
+   "latitude": 17.377565,
+   "longitude": 78.51865
+ },
+ {
+   "client_id": 30060,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Kukatpally",
+   "Location": "ESS HMT hills: Hyder Nagar",
+   "latitude": 17.50254,
+   "longitude": 78.39968
+ },
+ {
+   "client_id": 11199,
+   "District": "Hyderabad",
+   "Mandal": "Golkonda",
+   "Location": "Golkonda",
+   "latitude": 17.374817,
+   "longitude": 78.395485
+ },
+ {
+   "client_id": 11200,
+   "District": "Hyderabad",
+   "Mandal": "Nampally",
+   "Location": "Nampally",
+   "latitude": 17.385803,
+   "longitude": 78.46898
+ },
+ {
+   "client_id": 30078,
+   "District": "Hyderabad",
+   "Mandal": "Nampally",
+   "Location": "LB Stadium: Gunfoudry",
+   "latitude": 17.398527,
+   "longitude": 78.47365
+ },
+ {
+   "client_id": 30085,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Quthbullapur",
+   "Location": "Ward Office, Gayatri Nagar",
+   "latitude": 17.505518,
+   "longitude": 78.47084
+ },
+ {
+   "client_id": 10009,
+   "District": "Rangareddy",
+   "Mandal": "Saroornagar",
+   "Location": "Viratnagar DMRL",
+   "latitude": 17.336369,
+   "longitude": 78.51665
+ },
+ {
+   "client_id": 30128,
+   "District": "Hyderabad",
+   "Mandal": "Khairatabad",
+   "Location": "CESS",
+   "latitude": 17.431116,
+   "longitude": 78.452126
+ },
+ {
+   "client_id": 10924,
+   "District": "Hyderabad",
+   "Mandal": "Saidabad",
+   "Location": "Asmanghad",
+   "latitude": 17.363916,
+   "longitude": 78.515884
+ },
+ {
+   "client_id": 30176,
+   "District": "Hyderabad",
+   "Mandal": "Musheerabad",
+   "Location": "Adikmet Ward office",
+   "latitude": 17.409182,
+   "longitude": 78.5153
+ },
+ {
+   "client_id": 10932,
+   "District": "Hyderabad",
+   "Mandal": "Tirumalagiri",
+   "Location": "Tirumalagiri",
+   "latitude": 17.471401,
+   "longitude": 78.5027
+ },
+ {
+   "client_id": 30178,
+   "District": "Hyderabad",
+   "Mandal": "Musheerabad",
+   "Location": "MCH Colony, Library Building",
+   "latitude": 17.41735,
+   "longitude": 78.508095
+ },
+ {
+   "client_id": 11204,
+   "District": "Rangareddy",
+   "Mandal": "Saroornagar",
+   "Location": "L.B.Nagar (GHMC Office)",
+   "latitude": 17.367136,
+   "longitude": 78.53522
+ },
+ {
+   "client_id": 30103,
+   "District": "Hyderabad",
+   "Mandal": "Secunderabad",
+   "Location": "Patigadda",
+   "latitude": 17.433495,
+   "longitude": 78.48402
+ },
+ {
+   "client_id": 30024,
+   "District": "Hyderabad",
+   "Mandal": "Bahadurpura",
+   "Location": "Setwin Training Center: Suleman Nagar",
+   "latitude": 17.353195,
+   "longitude": 78.43383
+ },
+ {
+   "client_id": 30163,
+   "District": "Rangareddy",
+   "Mandal": "Saroornagar",
+   "Location": "Ward Office Building,SBI Colony Champapet",
+   "latitude": 17.345945,
+   "longitude": 78.51523
+ },
+ {
+   "client_id": 30077,
+   "District": "Hyderabad",
+   "Mandal": "Nampally",
+   "Location": "Begum Bazar Doodh Khana UHC",
+   "latitude": 17.375645,
+   "longitude": 78.47123
+ },
+ {
+   "client_id": 30075,
+   "District": "Hyderabad",
+   "Mandal": "Musheerabad",
+   "Location": "Osmania University Registrar Office",
+   "latitude": 17.41077,
+   "longitude": 78.52348
+ },
+ {
+   "client_id": 30175,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Malkajgiri",
+   "Location": "Vinayak Nagar Ward office",
+   "latitude": 17.468058,
+   "longitude": 78.54172
+ },
+ {
+   "client_id": 12007,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Balanagar",
+   "Location": "Begumpet (IMD Office)",
+   "latitude": 17.446772,
+   "longitude": 78.473495
+ },
+ {
+   "client_id": 30125,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Uppal",
+   "Location": "Nacharam Ward Office",
+   "latitude": 17.424343,
+   "longitude": 78.54349
+ },
+ {
+   "client_id": 11191,
+   "District": "Hyderabad",
+   "Mandal": "Maredpally",
+   "Location": "West Maredpally",
+   "latitude": 17.454046,
+   "longitude": 78.51198
+ },
+ {
+   "client_id": 30162,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Quthbullapur",
+   "Location": "GHMC Ward Office,Mahadevapuram",
+   "latitude": 17.517122,
+   "longitude": 78.4137
+ },
+ {
+   "client_id": 30147,
+   "District": "Hyderabad",
+   "Mandal": "Bandlaguda",
+   "Location": "Mekalamandi Community Hall",
+   "latitude": 17.346674,
+   "longitude": 78.48095
+ },
+ {
+   "client_id": 30071,
+   "District": "Hyderabad",
+   "Mandal": "Maredpally",
+   "Location": "Pikit Health center:Contonment Area",
+   "latitude": 17.45222,
+   "longitude": 78.500015
+ },
+ {
+   "client_id": 11812,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Quthbullapur",
+   "Location": "ESS Jeedimetla",
+   "latitude": 17.522272,
+   "longitude": 78.44154
+ },
+ {
+   "client_id": 11203,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Kapra",
+   "Location": "Kapra (GHMC Office)",
+   "latitude": 17.469864,
+   "longitude": 78.56666
+ },
+ {
+   "client_id": 30086,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Quthbullapur",
+   "Location": "ESS Gajularamaram",
+   "latitude": 17.522104,
+   "longitude": 78.429474
+ },
+ {
+   "client_id": 30052,
+   "District": "Hyderabad",
+   "Mandal": "Khairatabad",
+   "Location": "Pillidarga Ward Office: Borabanda",
+   "latitude": 17.451418,
+   "longitude": 78.40887
+ },
+ {
+   "client_id": 30172,
+   "District": "Hyderabad",
+   "Mandal": "Himayatnagar",
+   "Location": "Ward Office, Nehru Nagar",
+   "latitude": 17.38907,
+   "longitude": 78.50261
+ },
+ {
+   "client_id": 11195,
+   "District": "Hyderabad",
+   "Mandal": "Khairatabad",
+   "Location": "Srinagarcolony",
+   "latitude": 17.430538,
+   "longitude": 78.44192
+ },
+ {
+   "client_id": 30061,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Kukatpally",
+   "Location": "Ward Office, Allapur Vivekananda Nagar",
+   "latitude": 17.459526,
+   "longitude": 78.399185
+ },
+ {
+   "client_id": 30065,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Malkajgiri",
+   "Location": "Vivekanandapuram Comm Hall: Neredmet",
+   "latitude": 17.48933,
+   "longitude": 78.53105
+ },
+ {
+   "client_id": 30027,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Balanagar",
+   "Location": "Community Hall, Fathe Nagar",
+   "latitude": 17.457727,
+   "longitude": 78.45086
+ },
+ {
+   "client_id": 30025,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Balanagar",
+   "Location": "Ferozguda Comm Hall: Balanagar",
+   "latitude": 17.464611,
+   "longitude": 78.46235
+ },
+ {
+   "client_id": 30166,
+   "District": "Rangareddy",
+   "Mandal": "Hayathnagar",
+   "Location": "Model Market Bldg NGOs Colony, Vansathalipuram",
+   "latitude": 17.327703,
+   "longitude": 78.56304
+ },
+ {
+   "client_id": 30177,
+   "District": "Hyderabad",
+   "Mandal": "Musheerabad",
+   "Location": "Boudha Nagar Community Hall",
+   "latitude": 17.416006,
+   "longitude": 78.51738
+ },
+ {
+   "client_id": 30022,
+   "District": "Hyderabad",
+   "Mandal": "Bahadurpura",
+   "Location": "Bandi Adda Community Hall: Gansibazar",
+   "latitude": 17.36654,
+   "longitude": 78.46292
+ },
+ {
+   "client_id": 30173,
+   "District": "Hyderabad",
+   "Mandal": "Musheerabad",
+   "Location": "Bholakpur Comm Hall, Near Musheerabad PS",
+   "latitude": 17.41956,
+   "longitude": 78.50078
+ },
+ {
+   "client_id": 30144,
+   "District": "Hyderabad",
+   "Mandal": "Charminar",
+   "Location": "Edi bazar Community hall",
+   "latitude": 17.352781,
+   "longitude": 78.49315
+ },
+ {
+   "client_id": 30034,
+   "District": "Hyderabad",
+   "Mandal": "Charminar",
+   "Location": "Libraray Building: ReinBazar Yakuthpura SRT colony",
+   "latitude": 17.35655,
+   "longitude": 78.493546
+ },
+ {
+   "client_id": 30079,
+   "District": "Hyderabad",
+   "Mandal": "Nampally",
+   "Location": "Dogs Control Building:Gowliwada Jumerath Bazar",
+   "latitude": 17.37041,
+   "longitude": 78.46475
+ },
+ {
+   "client_id": 30088,
+   "District": "Rangareddy",
+   "Mandal": "Rajendranagar",
+   "Location": "GHMC Circle office: Rajendranagar",
+   "latitude": 17.331787,
+   "longitude": 78.40892
+ },
+ {
+   "client_id": 30142,
+   "District": "Hyderabad",
+   "Mandal": "Amberpet",
+   "Location": "Palton Community Hall",
+   "latitude": 17.372238,
+   "longitude": 78.503105
+ },
+ {
+   "client_id": 10014,
+   "District": "Rangareddy",
+   "Mandal": "Serilingampally",
+   "Location": "Madhapur",
+   "latitude": 17.453136,
+   "longitude": 78.37482
+ },
+ {
+   "client_id": 30116,
+   "District": "Hyderabad",
+   "Mandal": "Shaikpet",
+   "Location": "Venkatgiri Water Tank: Vengalrao Nagar",
+   "latitude": 17.432314,
+   "longitude": 78.422005
+ },
+ {
+   "client_id": 11927,
+   "District": "Rangareddy",
+   "Mandal": "Serilingampally",
+   "Location": "University of Hyderabad",
+   "latitude": 17.453108,
+   "longitude": 78.31861
+ },
+ {
+   "client_id": 11780,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Quthbullapur",
+   "Location": "Shapur Nagar",
+   "latitude": 17.52169,
+   "longitude": 78.44752
+ },
+ {
+   "client_id": 30157,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Kukatpally",
+   "Location": "Rajiv Gruhakalpa",
+   "latitude": 17.506525,
+   "longitude": 78.421524
+ },
+ {
+   "client_id": 30146,
+   "District": "Hyderabad",
+   "Mandal": "Bahadurpura",
+   "Location": "Wadi E Mahmood Sulemannagar, Pillar No.217",
+   "latitude": 17.345882,
+   "longitude": 78.41774
+ },
+ {
+   "client_id": 30168,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Kapra",
+   "Location": "Sainikpuri Shopping Complex",
+   "latitude": 17.48398,
+   "longitude": 78.55005
+ },
+ {
+   "client_id": 30169,
+   "District": "Hyderabad",
+   "Mandal": "Musheerabad",
+   "Location": "Jawahar Nagar Community Hall",
+   "latitude": 17.40905,
+   "longitude": 78.49125
+ },
+ {
+   "client_id": 10006,
+   "District": "Hyderabad",
+   "Mandal": "Shaikpet",
+   "Location": "Jubileehills",
+   "latitude": 17.42939,
+   "longitude": 78.4044
+ },
+ {
+   "client_id": 30141,
+   "District": "Hyderabad",
+   "Mandal": "Bandlaguda",
+   "Location": "Khalender Nagar Community Hall",
+   "latitude": 17.3456,
+   "longitude": 78.50525
+ },
+ {
+   "client_id": 30126,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Malkajgiri",
+   "Location": "Sakhi Center, Safilguda",
+   "latitude": 17.466358,
+   "longitude": 78.53417
+ },
+ {
+   "client_id": 30056,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Kukatpally",
+   "Location": "PHC Center, Balaji Nagar",
+   "latitude": 17.483204,
+   "longitude": 78.40924
+ },
+ {
+   "client_id": 10534,
+   "District": "Hyderabad",
+   "Mandal": "Bandlaguda",
+   "Location": "Kandikal Gate",
+   "latitude": 17.331944,
+   "longitude": 78.478
+ },
+ {
+   "client_id": 30081,
+   "District": "Sangareddy",
+   "Mandal": "Patancheru",
+   "Location": "Patancheruvu MRO Office",
+   "latitude": 17.52644,
+   "longitude": 78.26746
+ },
+ {
+   "client_id": 30068,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Malkajgiri",
+   "Location": "Community Hall, Lalapet Moulali",
+   "latitude": 17.440231,
+   "longitude": 78.54539
+ },
+ {
+   "client_id": 30030,
+   "District": "Hyderabad",
+   "Mandal": "Bandlaguda",
+   "Location": "Barkas ESS chandrayan gutta",
+   "latitude": 17.314981,
+   "longitude": 78.47849
+ },
+ {
+   "client_id": 30015,
+   "District": "Hyderabad",
+   "Mandal": "Amberpet",
+   "Location": "Malakpet Millath Comm Hall",
+   "latitude": 17.381086,
+   "longitude": 78.50037
+ },
+ {
+   "client_id": 30113,
+   "District": "Hyderabad",
+   "Mandal": "Shaikpet",
+   "Location": "Venkateshwara Colony: Banjarahills",
+   "latitude": 17.418644,
+   "longitude": 78.44196
+ },
+ {
+   "client_id": 30051,
+   "District": "Hyderabad",
+   "Mandal": "Shaikpet",
+   "Location": "Dr.MCRHRD IT Campus",
+   "latitude": 17.44111,
+   "longitude": 78.409904
+ },
+ {
+   "client_id": 30115,
+   "District": "Hyderabad",
+   "Mandal": "Shaikpet",
+   "Location": "Goutham Nagar Function Hall: Filmnagar",
+   "latitude": 17.411781,
+   "longitude": 78.41054
+ },
+ {
+   "client_id": 30063,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Malkajgiri",
+   "Location": "Prasanth Nagar Community Hall: East Anandbagh",
+   "latitude": 17.445084,
+   "longitude": 78.54343
+ },
+ {
+   "client_id": 30098,
+   "District": "Hyderabad",
+   "Mandal": "Saidabad",
+   "Location": "Govt. Boys High School: Kurmaguda",
+   "latitude": 17.36007,
+   "longitude": 78.50423
+ },
+ {
+   "client_id": 30089,
+   "District": "Rangareddy",
+   "Mandal": "Rajendranagar",
+   "Location": "RDO Office: Attapur",
+   "latitude": 17.357414,
+   "longitude": 78.425316
+ },
+ {
+   "client_id": 11196,
+   "District": "Hyderabad",
+   "Mandal": "Asifnagar",
+   "Location": "Asifnagar",
+   "latitude": 17.395567,
+   "longitude": 78.42901
+ },
+ {
+   "client_id": 11198,
+   "District": "Hyderabad",
+   "Mandal": "Bahadurpura",
+   "Location": "Chandulal Baradari (Opp. Zoo Park)",
+   "latitude": 17.350273,
+   "longitude": 78.457085
+ },
+ {
+   "client_id": 30042,
+   "District": "Rangareddy",
+   "Mandal": "Hayathnagar",
+   "Location": "Prashanth Nagar Comm Hall: Vanasthalipuram",
+   "latitude": 17.335182,
+   "longitude": 78.56789
+ },
+ {
+   "client_id": 30095,
+   "District": "Hyderabad",
+   "Mandal": "Saidabad",
+   "Location": "Vinay Nagar Comm Hal: I.S.Sadan",
+   "latitude": 17.35292,
+   "longitude": 78.50732
+ },
+ {
+   "client_id": 10013,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Uppal",
+   "Location": "Bandlaguda",
+   "latitude": 17.365446,
+   "longitude": 78.570946
+ },
+ {
+   "client_id": 30155,
+   "District": "Hyderabad",
+   "Mandal": "Asifnagar",
+   "Location": "Bada Bazar Comm Hall, First Lancer, Ahmed Nagar",
+   "latitude": 17.402782,
+   "longitude": 78.44006
+ },
+ {
+   "client_id": 11197,
+   "District": "Hyderabad",
+   "Mandal": "Amberpet",
+   "Location": "Bathukamma kunta ESS",
+   "latitude": 17.395027,
+   "longitude": 78.51115
+ },
+ {
+   "client_id": 10001,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Uppal",
+   "Location": "Moulali",
+   "latitude": 17.456022,
+   "longitude": 78.5808
+ },
+ {
+   "client_id": 11189,
+   "District": "Hyderabad",
+   "Mandal": "Shaikpet",
+   "Location": "Shaikpet",
+   "latitude": 17.397783,
+   "longitude": 78.40016
+ },
+ {
+   "client_id": 30021,
+   "District": "Hyderabad",
+   "Mandal": "Bahadurpura",
+   "Location": "Chandulal Baradari Sports Complex: Doodbowli",
+   "latitude": 17.352558,
+   "longitude": 78.46154
+ },
+ {
+   "client_id": 30124,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Uppal",
+   "Location": "Ramanthapur Ward Office",
+   "latitude": 17.392765,
+   "longitude": 78.53666
+ },
+ {
+   "client_id": 30074,
+   "District": "Hyderabad",
+   "Mandal": "Musheerabad",
+   "Location": "Bansilalpet",
+   "latitude": 17.426455,
+   "longitude": 78.49224
+ },
+ {
+   "client_id": 30119,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Uppal",
+   "Location": "Chilkanagar Comm Hall",
+   "latitude": 17.42164,
+   "longitude": 78.56329
+ },
+ {
+   "client_id": 30019,
+   "District": "Hyderabad",
+   "Mandal": "Asifnagar",
+   "Location": "Football Ground Vijayanagar Colony",
+   "latitude": 17.393282,
+   "longitude": 78.45227
+ },
+ {
+   "client_id": 30033,
+   "District": "Hyderabad",
+   "Mandal": "Charminar",
+   "Location": "Balashetty Water Tank Building(HMWS): Dabeerpura",
+   "latitude": 17.369099,
+   "longitude": 78.484436
+ },
+ {
+   "client_id": 30018,
+   "District": "Hyderabad",
+   "Mandal": "Asifnagar",
+   "Location": "Ziaguda Ranganath Comm Hall (beside ranganatha temple)",
+   "latitude": 17.36919,
+   "longitude": 78.451126
+ },
+ {
+   "client_id": 30101,
+   "District": "Rangareddy",
+   "Mandal": "Saroornagar",
+   "Location": "Rock Town Colony: Nagole",
+   "latitude": 17.361847,
+   "longitude": 78.56294
+ },
+ {
+   "client_id": 30100,
+   "District": "Rangareddy",
+   "Mandal": "Saroornagar",
+   "Location": "Madhura nagar Comm.Hall",
+   "latitude": 17.350306,
+   "longitude": 78.56218
+ },
+ {
+   "client_id": 11194,
+   "District": "Hyderabad",
+   "Mandal": "Himayatnagar",
+   "Location": "Vittalvadi",
+   "latitude": 17.396992,
+   "longitude": 78.48904
+ },
+ {
+   "client_id": 30160,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Kukatpally",
+   "Location": "Kukatpally Village (Basthi Dawakhana)",
+   "latitude": 17.497017,
+   "longitude": 78.42706
+ },
+ {
+   "client_id": 30170,
+   "District": "Hyderabad",
+   "Mandal": "Musheerabad",
+   "Location": "Talla Basthi Community Hall",
+   "latitude": 17.420124,
+   "longitude": 78.4902
+ },
+ {
+   "client_id": 30099,
+   "District": "Rangareddy",
+   "Mandal": "Saroornagar",
+   "Location": "Alakapuri Comm Hall",
+   "latitude": 17.365435,
+   "longitude": 78.55321
+ },
+ {
+   "client_id": 30011,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Alwal",
+   "Location": "PHC Center, Ambedkar Nagar",
+   "latitude": 17.496101,
+   "longitude": 78.50697
+ },
+ {
+   "client_id": 10998,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Quthbullapur",
+   "Location": "ESS Quthbullapur",
+   "latitude": 17.500713,
+   "longitude": 78.45216
+ },
+ {
+   "client_id": 30037,
+   "District": "Hyderabad",
+   "Mandal": "Golkonda",
+   "Location": "Golkonda Tasil office: Lungerhouse",
+   "latitude": 17.375586,
+   "longitude": 78.42592
+ },
+ {
+   "client_id": 30109,
+   "District": "Rangareddy",
+   "Mandal": "Serilingampally",
+   "Location": "MMTS Lingampally",
+   "latitude": 17.485283,
+   "longitude": 78.31479
+ },
+ {
+   "client_id": 12542,
+   "District": "Hyderabad",
+   "Mandal": "Khairatabad",
+   "Location": "Ganaanka Bhavan",
+   "latitude": 17.40799,
+   "longitude": 78.46018
+ },
+ {
+   "client_id": 30043,
+   "District": "Rangareddy",
+   "Mandal": "Hayathnagar",
+   "Location": "South Hasthinapuram South Comm Hall",
+   "latitude": 17.324741,
+   "longitude": 78.555145
+ },
+ {
+   "client_id": 30067,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Malkajgiri",
+   "Location": "Addagutta Community Hall",
+   "latitude": 17.443089,
+   "longitude": 78.52359
+ },
+ {
+   "client_id": 30031,
+   "District": "Hyderabad",
+   "Mandal": "Bandlaguda",
+   "Location": "OWISI Commnuity Hall: Kanchanbagh",
+   "latitude": 17.327,
+   "longitude": 78.49441
+ },
+ {
+   "client_id": 30149,
+   "District": "Hyderabad",
+   "Mandal": "Bandlaguda",
+   "Location": "GHMC Zonal Office, Charminar Zone, Phool Bagh",
+   "latitude": 17.3323,
+   "longitude": 78.48617
+ },
+ {
+   "client_id": 30012,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Alwal",
+   "Location": "Community Hall, Telecom colony",
+   "latitude": 17.49241,
+   "longitude": 78.498116
+ },
+ {
+   "client_id": 30094,
+   "District": "Sangareddy",
+   "Mandal": "Ramachandrapuram",
+   "Location": "DEO office Beside Substaion: R.C.Puram",
+   "latitude": 17.509441,
+   "longitude": 78.30196
+ },
+ {
+   "client_id": 10544,
+   "District": "Rangareddy",
+   "Mandal": "Hayathnagar",
+   "Location": "Hayathnagar",
+   "latitude": 17.33485,
+   "longitude": 78.61254
+ },
+ {
+   "client_id": 30158,
+   "District": "Medchal-Malkajgiri",
+   "Mandal": "Kukatpally",
+   "Location": "Shamshiguda",
+   "latitude": 17.506073,
+   "longitude": 78.404236
+ },
+ {
+   "client_id": 30106,
+   "District": "Rangareddy",
+   "Mandal": "Serilingampally",
+   "Location": "JPN Nagar Comm Hall: Miyapur",
+   "latitude": 17.506363,
+   "longitude": 78.356384
+ },
+ {
+   "client_id": 30174,
+   "District": "Hyderabad",
+   "Mandal": "Amberpet",
+   "Location": "GHMC Sports Complex, Amberpet",
+   "latitude": 17.39176,
+   "longitude": 78.51821
+ },
+ {
+   "client_id": 30091,
+   "District": "Rangareddy",
+   "Mandal": "Rajendranagar",
+   "Location": "Near Ekta Colony: Shastripuram (Sivarampally)",
+   "latitude": 17.330141,
+   "longitude": 78.43731
+ },
+ {
+   "client_id": 10535,
+   "District": "Hyderabad",
+   "Mandal": "Ameerpet",
+   "Location": "Maitrivanam",
+   "latitude": 17.436794,
+   "longitude": 78.44608
+ }
+]
