@@ -7,9 +7,9 @@ import { useTelegram } from './hooks/useTelegram'
 import { useWeatherData } from './hooks/useWeatherData'
 
 export default function App() {
-  const [activeMetric,     setActiveMetric]     = useState('rain')
+  const [activeMetric, setActiveMetric] = useState('rain')
   const [showNotifications, setShowNotifications] = useState(false)
-  const [selectedStation,  setSelectedStation]  = useState(null)
+  const [selectedStation, setSelectedStation] = useState(null)
   const mapRef = useRef(null)
 
   // Telegram SDK init
@@ -26,8 +26,7 @@ export default function App() {
 
   return (
     <div
-      className="h-screen w-screen overflow-hidden relative"
-      style={{ background: '#080f1a' }}
+      className="h-screen w-screen overflow-hidden relative bg-slate-950"
     >
       {/* ── Full-screen map ──────────────────────────────── */}
       <MapView
@@ -68,24 +67,19 @@ export default function App() {
       {/* ── Loading overlay ──────────────────────────────── */}
       {loading && (
         <div
-          className="absolute inset-0 z-[2000] flex items-center justify-center"
-          style={{ background: 'rgba(8,15,26,0.8)', backdropFilter: 'blur(6px)' }}
+          className="absolute inset-0 z-[2000] flex items-center justify-center bg-slate-950/80 backdrop-blur-[6px]"
         >
           <div className="text-center">
-            <div style={{ fontSize: 40, marginBottom: 12 }}>🌦️</div>
-            <div
-              className="font-semibold mb-1"
-              style={{ color: '#38bdf8', fontSize: 14, letterSpacing: '.04em', fontFamily: "'Space Grotesk', sans-serif" }}
-            >
+            <div className="text-[40px] mb-3">🌦️</div>
+            <div className="font-semibold mb-1 text-sky-400 text-sm tracking-wider font-display">
               GHMC WEATHER
             </div>
-            <div style={{ fontSize: 11, color: '#475569', fontFamily: "'JetBrains Mono', monospace" }}>
+            <div className="text-xs text-slate-600 font-mono">
               Fetching station data…
             </div>
             {/* Progress bar */}
             <div
-              className="mt-4 mx-auto rounded-full overflow-hidden"
-              style={{ width: 140, height: 2, background: 'rgba(56,189,248,0.12)' }}
+              className="mt-4 mx-auto rounded-full overflow-hidden w-[140px] h-0.5 bg-sky-400/10"
             >
               <div
                 className="h-full rounded-full animate-pulse-glow"
@@ -99,18 +93,13 @@ export default function App() {
       {/* ── Error toast ──────────────────────────────────── */}
       {error && !loading && stations.length === 0 && (
         <div
-          className="absolute bottom-28 left-3 right-3 z-[1500] rounded-2xl p-4 animate-fade-in"
-          style={{
-            background: 'rgba(69,10,10,0.9)',
-            border: '1px solid rgba(239,68,68,0.3)',
-            backdropFilter: 'blur(8px)',
-          }}
+          className="absolute bottom-28 left-3 right-3 z-[1500] rounded-2xl p-4 animate-fade-in bg-red-950/90 border border-red-500/30 backdrop-blur-[8px]"
         >
           <div className="flex items-start gap-3">
-            <span style={{ fontSize: 16, flexShrink: 0 }}>⚠️</span>
+            <span className="text-base shrink-0">⚠️</span>
             <div>
-              <div className="font-semibold text-sm" style={{ color: '#fca5a5' }}>Data fetch failed</div>
-              <div style={{ fontSize: 11, color: '#991b1b', marginTop: 2 }}>{error}</div>
+              <div className="font-semibold text-sm text-red-300">Data fetch failed</div>
+              <div className="text-xs text-red-800 mt-0.5">{error}</div>
             </div>
           </div>
         </div>

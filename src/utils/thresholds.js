@@ -1,8 +1,8 @@
 export const THRESHOLDS = {
-  rain:     { warning: 10,  severe: 15  },   // mm/hr
-  temp:     { warning: 38,  severe: 42  },   // °C
-  humidity: { warning: 85,  severe: 95  },   // %
-  wind:     { warning: 30,  severe: 50  },   // km/h
+  rain: { warning: 10, severe: 15 },   // mm/hr
+  temp: { warning: 38, severe: 42 },   // °C
+  humidity: { warning: 95 },                 // %
+  wind: { warning: 30, severe: 50 },   // km/h
 }
 
 export function checkThresholds(stations) {

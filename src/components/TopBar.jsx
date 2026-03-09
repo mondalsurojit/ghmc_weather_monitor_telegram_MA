@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from 'react'
 
 export default function TopBar({ stations, alerts, onStationSelect, onBellClick, lastUpdated, loading }) {
-  const [query,   setQuery]   = useState('')
+  const [query, setQuery] = useState('')
   const [results, setResults] = useState([])
-  const [open,    setOpen]    = useState(false)
+  const [open, setOpen] = useState(false)
   const inputRef = useRef(null)
-  const wrapRef  = useRef(null)
+  const wrapRef = useRef(null)
 
   // Filter stations as user types
   useEffect(() => {
@@ -13,9 +13,9 @@ export default function TopBar({ stations, alerts, onStationSelect, onBellClick,
     const q = query.toLowerCase()
     const hits = stations
       .filter(s =>
-        (s.Location  ?? '').toLowerCase().includes(q) ||
-        (s.Mandal    ?? '').toLowerCase().includes(q) ||
-        (s.District  ?? '').toLowerCase().includes(q)
+        (s.Location ?? '').toLowerCase().includes(q) ||
+        (s.Mandal ?? '').toLowerCase().includes(q) ||
+        (s.District ?? '').toLowerCase().includes(q)
       )
       .slice(0, 7)
     setResults(hits)
@@ -47,10 +47,10 @@ export default function TopBar({ stations, alerts, onStationSelect, onBellClick,
     inputRef.current?.focus()
   }
 
-  const severeCount  = alerts.filter(a => a.level === 'SEVERE').length
+  const severeCount = alerts.filter(a => a.level === 'SEVERE').length
   const warningCount = alerts.filter(a => a.level === 'WARNING').length
-  const alertCount   = alerts.length
-  const badgeColor   = severeCount > 0 ? '#ef4444' : warningCount > 0 ? '#f97316' : null
+  const alertCount = alerts.length
+  const badgeColor = severeCount > 0 ? '#ef4444' : warningCount > 0 ? '#f97316' : null
 
   const timeStr = lastUpdated
     ? lastUpdated.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true })
@@ -61,7 +61,7 @@ export default function TopBar({ stations, alerts, onStationSelect, onBellClick,
       className="absolute top-0 left-0 right-0 z-[1000]"
       style={{
         paddingTop: 'env(safe-area-inset-top, 12px)',
-        background: 'linear-gradient(to bottom, rgba(8,15,26,0.95) 0%, rgba(8,15,26,0.7) 80%, transparent 100%)',
+        background: 'linear-gradient(to bottom, #080f1af2 0%, #080f1ab3, 0.70) 80%, transparent 100%)',
       }}
     >
       <div className="px-3 pt-3 pb-4 flex items-center gap-2">
@@ -69,18 +69,19 @@ export default function TopBar({ stations, alerts, onStationSelect, onBellClick,
         {/* ── Search bar ─────────────────────────────────── */}
         <div ref={wrapRef} className="relative flex-1">
           <div
-            className="flex items-center gap-2 px-3.5 h-10 rounded-2xl"
+            className={
+              "flex items-center gap-2 px-3.5 h-10 rounded-2xl " +
+              "bg-slate-900/90 backdrop-blur-[12px] " +
+              "border border-sky-400/15 " +
+              "transition-shadow duration-150"
+            }
             style={{
-              background: 'rgba(15, 25, 45, 0.85)',
-              backdropFilter: 'blur(12px)',
-              border: '1px solid rgba(56, 189, 248, 0.15)',
-              boxShadow: open ? '0 0 0 1.5px rgba(56,189,248,0.3)' : 'none',
-              transition: 'box-shadow 0.15s',
+              boxShadow: open ? '0 0 0 1.5px #38bdf84d' : 'none',
             }}
           >
             {/* Search icon */}
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#475569" strokeWidth="2.5" strokeLinecap="round">
-              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+              <circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" />
             </svg>
 
             <input
@@ -90,53 +91,51 @@ export default function TopBar({ stations, alerts, onStationSelect, onBellClick,
               onChange={e => setQuery(e.target.value)}
               onFocus={() => results.length > 0 && setOpen(true)}
               placeholder="Search station, mandal…"
-              className="flex-1 bg-transparent outline-none text-sm"
-              style={{ color: '#e2e8f0', caretColor: '#38bdf8' }}
+              className="flex-1 bg-transparent outline-none text-sm text-slate-200 caret-sky-400"
             />
 
             {/* Loading spinner or clear */}
             {loading && !query ? (
               <svg className="animate-spin" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2">
-                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/>
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4" />
               </svg>
             ) : query ? (
-              <button onPointerDown={clearSearch} style={{ color: '#475569', lineHeight: 1, fontSize: 18, padding: '0 2px' }}>×</button>
+              <button
+                onPointerDown={clearSearch}
+                className="text-slate-600 leading-none text-lg px-[2px]"
+              >
+                ×
+              </button>
             ) : null}
           </div>
 
           {/* ── Dropdown results ─────────────────────────── */}
           {open && (
             <div
-              className="search-dropdown absolute top-12 left-0 right-0 rounded-2xl overflow-hidden shadow-2xl"
-              style={{
-                background: 'rgba(10, 18, 35, 0.97)',
-                backdropFilter: 'blur(16px)',
-                border: '1px solid rgba(56,189,248,0.15)',
-                maxHeight: '55vw',
-                overflowY: 'auto',
-                zIndex: 50,
-              }}
+              className={
+                "search-dropdown absolute top-12 left-0 right-0 rounded-2xl overflow-hidden shadow-2xl " +
+                "bg-slate-950/95 backdrop-blur-[16px] " +
+                "border border-sky-400/15 " +
+                "max-h-[55vw] overflow-y-auto z-50"
+              }
             >
               {results.map((s, i) => (
                 <button
                   key={s.client_id}
                   onPointerDown={() => handleSelect(s)}
-                  className="w-full text-left px-4 py-3 flex items-center gap-3"
-                  style={{
-                    borderBottom: i < results.length - 1 ? '1px solid rgba(255,255,255,0.04)' : 'none',
-                  }}
+                  className={
+                    "w-full text-left px-4 py-3 flex items-center gap-3 " +
+                    (i < results.length - 1 ? "border-b border-white/5" : "border-b-0")
+                  }
                 >
                   <div
-                    style={{
-                      width: 6, height: 6, borderRadius: '50%',
-                      background: '#38bdf8', flexShrink: 0, opacity: 0.7
-                    }}
+                    className="w-1.5 h-1.5 rounded-full bg-sky-400 shrink-0 opacity-70"
                   />
-                  <div style={{ minWidth: 0 }}>
-                    <div className="text-sm font-semibold truncate" style={{ color: '#e2e8f0' }}>
+                  <div className="min-w-0">
+                    <div className="text-sm font-semibold truncate text-slate-200">
                       {(s.Location ?? '').trim()}
                     </div>
-                    <div className="text-xs truncate" style={{ color: '#475569' }}>
+                    <div className="text-xs truncate text-slate-600">
                       {s.Mandal} · {s.District}
                     </div>
                   </div>
@@ -149,31 +148,22 @@ export default function TopBar({ stations, alerts, onStationSelect, onBellClick,
         {/* ── Bell button ──────────────────────────────────── */}
         <button
           onClick={onBellClick}
-          className="relative flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-2xl"
+          className="relative flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-2xl bg-slate-900/90 backdrop-blur-[12px] border"
           style={{
-            background: 'rgba(15, 25, 45, 0.85)',
-            backdropFilter: 'blur(12px)',
-            border: `1px solid ${badgeColor ? badgeColor + '50' : 'rgba(56,189,248,0.15)'}`,
+            borderColor: badgeColor ? badgeColor + '50' : '#38bdf826',
           }}
         >
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
             stroke={badgeColor ?? '#64748b'} strokeWidth="2" strokeLinecap="round">
-            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
-            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+            <path d="M13.73 21a2 2 0 0 1-3.46 0" />
           </svg>
 
           {alertCount > 0 && (
             <span
-              className="animate-pulse-glow absolute flex items-center justify-center font-bold"
+              className="animate-pulse-glow absolute flex items-center justify-center font-bold -top-1 -right-1 min-w-[18px] h-[18px] rounded-lg text-white text-[8px] px-1 font-mono border-2 border-slate-950"
               style={{
-                top: -4, right: -4,
-                minWidth: 18, height: 18, borderRadius: 9,
                 background: badgeColor,
-                color: '#fff',
-                fontSize: 9,
-                padding: '0 4px',
-                fontFamily: "'JetBrains Mono', monospace",
-                border: '2px solid #080f1a',
               }}
             >
               {alertCount > 9 ? '9+' : alertCount}
@@ -185,20 +175,15 @@ export default function TopBar({ stations, alerts, onStationSelect, onBellClick,
       {/* ── Status bar ─────────────────────────────────────────── */}
       {timeStr && !loading && (
         <div
-          className="mx-3 mb-1 flex items-center gap-2 px-3 py-1.5 rounded-xl"
-          style={{
-            background: 'rgba(8,15,26,0.6)',
-            backdropFilter: 'blur(8px)',
-            border: '1px solid rgba(255,255,255,0.05)',
-          }}
+          className="mx-3 mb-1 flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-950/60 backdrop-blur-[8px] border border-white/5"
         >
-          <div style={{ width: 5, height: 5, borderRadius: '50%', background: '#4ade80', flexShrink: 0 }} className="animate-pulse-glow" />
-          <span style={{ fontSize: 10, color: '#475569', fontFamily: "'JetBrains Mono',monospace", letterSpacing: '.04em' }}>
-            LIVE · {stations.length} STATIONS · Updated {timeStr}
+          <div className="animate-pulse-glow w-1.5 h-1.5 rounded-full bg-green-400 shrink-0" />
+          <span className="text-[10px] text-slate-600 font-mono tracking-wider">
+            {stations.length} STATIONS · {timeStr}
           </span>
           {alertCount > 0 && (
-            <span style={{ fontSize: 10, color: badgeColor, fontFamily: "'JetBrains Mono',monospace", marginLeft: 'auto', letterSpacing: '.04em' }}>
-              {severeCount > 0 ? `🚨 ${severeCount} SEVERE` : ''}{severeCount > 0 && warningCount > 0 ? '  ' : ''}{warningCount > 0 ? `⚠️ ${warningCount} WARN` : ''}
+            <span className="text-[10px] font-mono tracking-wider ml-auto" style={{ color: badgeColor }}>
+              {severeCount > 0 ? `🚨 ${severeCount} SEVERE` : ''}{severeCount > 0 && warningCount > 0 ? '  ' : ''}{warningCount > 0 ? `⚠️ ${warningCount} WARNING` : ''}
             </span>
           )}
         </div>

@@ -194,8 +194,7 @@ const MapView = forwardRef(function MapView(
   return (
     <div
       ref={containerRef}
-      className="absolute inset-0"
-      style={{ zIndex: 0 }}
+      className="absolute inset-0 z-0"
     />
   )
 })
