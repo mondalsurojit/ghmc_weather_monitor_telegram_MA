@@ -1,7 +1,7 @@
 // ─── GHMC Weather Monitor — Service Worker ───────────────────
 // CACHE_VERSION is auto-stamped by vite.config.js on every build.
 // Manually bump it here only if deploying without `npm run build`.
-const CACHE_VERSION = 'v2026-03-09-1773091751210'
+const CACHE_VERSION = 'v2026-03-09-1773093932678'
 const CACHE_NAME = `ghmc-weather-${CACHE_VERSION}`
 
 const STATIC_ASSETS = [
@@ -17,7 +17,6 @@ const BYPASS_HOSTS = [
   'telangana.gov.in',
   'allorigins.win',
   'corsproxy.io',
-  'api.scraperapi.com',
   'docs.google.com',        // Google Sheets CSV
 ]
 
@@ -60,6 +59,9 @@ self.addEventListener('activate', event => {
 // ── Fetch ─────────────────────────────────────────────────────
 self.addEventListener('fetch', event => {
   const url = new URL(event.request.url)
+
+  // Ignore non-http(s) requests (chrome-extension, data, blob etc.)
+  if (url.protocol !== 'http:' && url.protocol !== 'https:') return
 
   // Always bypass — external data hosts
   if (BYPASS_HOSTS.some(h => url.hostname.includes(h))) {

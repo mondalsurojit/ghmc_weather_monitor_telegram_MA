@@ -178,11 +178,11 @@ export default function TopBar({ stations, alerts, onStationSelect, onBellClick,
           className="mx-3 mb-1 flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-950/60 backdrop-blur-[8px] border border-white/5"
         >
           <div className="animate-pulse-glow w-1.5 h-1.5 rounded-full bg-green-400 shrink-0" />
-          <span className="text-[10px] text-slate-600 font-mono tracking-wider">
+          <span className="text-[8px] text-slate-600 font-mono tracking-wider">
             {stations.length} STATIONS · {timeStr}
           </span>
           {alertCount > 0 && (
-            <span className="text-[10px] font-mono tracking-wider ml-auto" style={{ color: badgeColor }}>
+            <span className="text-[8px] font-mono tracking-wider ml-auto" style={{ color: badgeColor }}>
               {severeCount > 0 ? `🚨 ${severeCount} SEVERE` : ''}{severeCount > 0 && warningCount > 0 ? '  ' : ''}{warningCount > 0 ? `⚠️ ${warningCount} WARNING` : ''}
             </span>
           )}

@@ -3,8 +3,8 @@ import { parseCSV } from '../utils/parseData'
 import { checkThresholds } from '../utils/thresholds'
 
 const STATION_DATA_URL = import.meta.env.VITE_STATION_DATA_URL   // /api/weather  (Vercel)
-const SHEET_URL        = import.meta.env.VITE_SHEET_URL           // Google Sheets CSV (localhost fallback)
-const GHMC_MAP_URL     = import.meta.env.VITE_GHMC_MAP_URL
+const SHEET_URL = import.meta.env.VITE_SHEET_URL           // Google Sheets CSV (localhost fallback)
+const GHMC_MAP_URL = import.meta.env.VITE_GHMC_MAP_URL
 
 const INTERVAL = 5 * 60 * 1000   // refresh every 5 minutes
 
@@ -29,15 +29,15 @@ async function fetchLiveWeather() {
 
 // ── Hook ──────────────────────────────────────────────────────
 export function useWeatherData() {
-  const [stations,    setStations]    = useState([])
+  const [stations, setStations] = useState([])
   const [ghmcGeoJSON, setGhmcGeoJSON] = useState(null)
-  const [alerts,      setAlerts]      = useState([])
-  const [loading,     setLoading]     = useState(true)
-  const [error,       setError]       = useState(null)
+  const [alerts, setAlerts] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
   const [lastUpdated, setLastUpdated] = useState(null)
 
   const timerRef = useRef(null)
-  const metaRef  = useRef({})   // client_id (string) → { District, Mandal, Location, latitude, longitude }
+  const metaRef = useRef({})   // client_id (string) → { District, Mandal, Location, latitude, longitude }
 
   // ── GHMC boundary (once) ─────────────────────────────────────
   const loadBoundary = useCallback(async () => {
@@ -55,17 +55,17 @@ export function useWeatherData() {
     try {
       setError(null)
       const liveRows = await fetchLiveWeather()
-      const meta     = metaRef.current
+      const meta = metaRef.current
 
       const merged = liveRows
         .map(row => ({
           ...meta[String(row.client_id)],               // District, Mandal, Location, lat, lng
           ...row,                                        // rain, temp, humidity, wind, reading_time
-          client_id : Number(row.client_id),
-          rain      : parseFloat(row.rain)     || 0,
-          temp      : parseFloat(row.temp)     || 0,
-          humidity  : parseFloat(row.humidity) || 0,
-          wind      : parseFloat(row.wind)     || 0,
+          client_id: Number(row.client_id),
+          rain: parseFloat(row.rain) || 0,
+          temp: parseFloat(row.temp) || 0,
+          humidity: parseFloat(row.humidity) || 0,
+          wind: parseFloat(row.wind) || 0,
         }))
         .filter(s => s.latitude && s.longitude)
 

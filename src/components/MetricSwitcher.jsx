@@ -4,8 +4,8 @@ import { METRIC_META } from '../utils/colors'
 const METRICS = [
   { key: 'rain', ...METRIC_META.rain },
   { key: 'temp', ...METRIC_META.temp },
-  { key: 'humidity', ...METRIC_META.humidity },
   { key: 'wind', ...METRIC_META.wind },
+  { key: 'humidity', ...METRIC_META.humidity }
 ]
 
 export default function MetricSwitcher({ activeMetric, onChange, stations }) {
