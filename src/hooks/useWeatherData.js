@@ -15,6 +15,7 @@ async function fetchLiveWeather() {
     try {
       const r = await fetch(STATION_DATA_URL)
       if (r.ok) return await r.json()
+      throw new Error(`HTTP ${r.status}`)
     } catch (err) {
       console.warn('[fetchLiveWeather] Primary failed, falling back to CSV:', err.message)
     }
@@ -37,7 +38,12 @@ export function useWeatherData() {
   const [lastUpdated, setLastUpdated] = useState(null)
 
   const timerRef = useRef(null)
+  const stationsRef = useRef([])
   const metaRef = useRef({})   // client_id (string) → { District, Mandal, Location, latitude, longitude }
+
+  useEffect(() => {
+    stationsRef.current = stations
+  }, [stations])
 
   // ── GHMC boundary (once) ─────────────────────────────────────
   const loadBoundary = useCallback(async () => {
@@ -57,6 +63,10 @@ export function useWeatherData() {
       const liveRows = await fetchLiveWeather()
       const meta = metaRef.current
 
+      if (!Array.isArray(liveRows)) {
+        throw new Error('Unexpected response format')
+      }
+
       const merged = liveRows
         .map(row => ({
           ...meta[String(row.client_id)],               // District, Mandal, Location, lat, lng
@@ -74,7 +84,23 @@ export function useWeatherData() {
       setLastUpdated(new Date())
     } catch (err) {
       console.error('[useWeatherData] Station load failed:', err)
-      setError('Could not load weather data. Retrying in 5 min…')
+
+      const hasPrevious = stationsRef.current.length > 0
+
+      const isOffline =
+        (typeof navigator !== 'undefined' && navigator.onLine === false) ||
+        err?.name === 'TypeError' ||
+        String(err?.message || '').toLowerCase().includes('failed to fetch')
+
+      // If we already have data, keep showing it and don't trigger the error toast.
+      if (!hasPrevious) {
+        setError({
+          type: isOffline ? 'network' : 'data',
+          message: isOffline
+            ? 'Network issue — could not load weather data.'
+            : 'Data fetch failed — could not load weather data.'
+        })
+      }
     } finally {
       setLoading(false)
     }

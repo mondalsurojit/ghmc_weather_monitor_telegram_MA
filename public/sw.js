@@ -1,10 +1,13 @@
 // ─── GHMC Weather Monitor — Service Worker ───────────────────
 
-const CACHE_VERSION = 'v2026-03-09-1773093932678'
+const CACHE_VERSION = 'v2026-03-10-1773140461336'
 const CACHE_NAME = `ghmc-weather-${CACHE_VERSION}`
 
 const TILE_CACHE = 'ghmc-tiles'
 const TILE_LIMIT = 300
+
+const TEMP_DATA_CACHE = 'ghmc-temp-data'
+const TEMP_DATA_TTL = 30 * 60 * 1000 // 30 minutes
 
 const STATIC_ASSETS = [
   '/',
@@ -14,16 +17,14 @@ const STATIC_ASSETS = [
   '/stations.json',
 ]
 
-// Hosts that must always be fetched live — never cached
-const BYPASS_HOSTS = [
+// Hosts that must always use network first
+const NETWORK_FIRST_HOSTS = [
   'telangana.gov.in',
-  'allorigins.win',
-  'corsproxy.io',
   'docs.google.com',
 ]
 
-// Local paths that must always be fetched live — never cached
-const BYPASS_PATHS = [
+// Network-first paths
+const NETWORK_FIRST_PATHS = [
   '/api/weather',
 ]
 
@@ -40,7 +41,27 @@ async function enforceTileLimit() {
   }
 }
 
-// ── Install: pre-cache shell ─────────────────────────────────
+// ── Utility: check cache expiry ──────────────────────────────
+async function getValidCachedResponse(request) {
+
+  const cache = await caches.open(TEMP_DATA_CACHE)
+  const cached = await cache.match(request)
+
+  if (!cached) return null
+
+  const timestamp = cached.headers.get('sw-cache-time')
+  if (!timestamp) return null
+
+  const age = Date.now() - Number(timestamp)
+
+  if (age > TEMP_DATA_TTL) {
+    console.warn('[SW] Weather cache stale (>1h), using stale data')
+  }
+
+  return cached
+}
+
+// ── Install ──────────────────────────────────────────────────
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -52,7 +73,7 @@ self.addEventListener('install', event => {
   )
 })
 
-// ── Activate: purge old app caches (tile cache preserved) ───
+// ── Activate ─────────────────────────────────────────────────
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys()
@@ -73,12 +94,12 @@ self.addEventListener('activate', event => {
 
 // ── Fetch ───────────────────────────────────────────────────
 self.addEventListener('fetch', event => {
+
   const url = new URL(event.request.url)
 
-  // Ignore non-http(s) requests
   if (url.protocol !== 'http:' && url.protocol !== 'https:') return
 
-  // ── Navigation fallback for SPA ───────────────────────────
+  // ── SPA navigation fallback ───────────────────────────────
   if (event.request.mode === 'navigate') {
     event.respondWith(
       fetch(event.request).catch(() => caches.match('/index.html'))
@@ -86,37 +107,66 @@ self.addEventListener('fetch', event => {
     return
   }
 
-  // Always bypass — external data hosts
-  if (BYPASS_HOSTS.some(h => url.hostname.includes(h))) {
+  // ── Network-first logic with temporary cache ──────────────
+  if (
+    NETWORK_FIRST_HOSTS.some(h => url.hostname.includes(h)) ||
+    NETWORK_FIRST_PATHS.some(p => url.pathname.startsWith(p))
+  ) {
+
     event.respondWith(
-      fetch(event.request).catch(() =>
-        new Response(JSON.stringify({ error: 'offline' }), {
+
+      fetch(event.request).then(async response => {
+
+        const headers = new Headers(response.headers)
+        headers.set('sw-cache-time', Date.now())
+
+        const clone = new Response(await response.clone().blob(), {
+          status: response.status,
+          statusText: response.statusText,
+          headers
+        })
+
+        const cache = await caches.open(TEMP_DATA_CACHE)
+
+        // keep only latest entry
+        const keys = await cache.keys()
+        await Promise.all(keys.map(k => cache.delete(k)))
+
+        await cache.put(event.request, clone.clone())
+
+        return response
+
+      }).catch(async () => {
+
+        const cached = await getValidCachedResponse(event.request)
+
+        if (cached) return cached
+
+        return new Response(JSON.stringify({
+          error: 'NETWORK_UNAVAILABLE',
+          message: 'Network unavailable and no cached weather data present'
+        }), {
+          status: 503,
           headers: { 'Content-Type': 'application/json' }
         })
-      )
+
+      })
+
     )
+
     return
   }
 
-  // Always bypass — local API paths
-  if (BYPASS_PATHS.some(p => url.pathname.startsWith(p))) {
-    event.respondWith(
-      fetch(event.request).catch(() =>
-        new Response(JSON.stringify({ error: 'offline' }), {
-          headers: { 'Content-Type': 'application/json' }
-        })
-      )
-    )
-    return
-  }
-
-  // ── Tile-aware caching (limit 300) ─────────────────────────
+  // ── Tile caching ──────────────────────────────────────────
   if (url.hostname.includes('cartocdn.com')) {
+
     event.respondWith(
       caches.match(event.request).then(cached => {
+
         if (cached) return cached
 
         return fetch(event.request).then(response => {
+
           const clone = response.clone()
 
           caches.open(TILE_CACHE).then(async cache => {
@@ -126,14 +176,17 @@ self.addEventListener('fetch', event => {
 
           return response
         })
+
       })
     )
+
     return
   }
 
-  // ── Cache-first for static assets ─────────────────────────
+  // ── Static asset caching ──────────────────────────────────
   event.respondWith(
     caches.match(event.request).then(cached => {
+
       if (cached) return cached
 
       return fetch(event.request).then(response => {
@@ -157,12 +210,13 @@ self.addEventListener('fetch', event => {
         }
 
         return response
-      }).catch(() => cached || new Response('', { status: 503 }))
+      })
+        .catch(() => cached || new Response('', { status: 503 }))
     })
   )
 })
 
-// ── Message: version check ───────────────────────────────────
+// ── Message ─────────────────────────────────────────────────
 self.addEventListener('message', event => {
   if (event.data?.type === 'GET_VERSION') {
     event.ports[0]?.postMessage({

@@ -18,6 +18,12 @@ export default function App() {
   // Live weather data + GHMC boundary
   const { stations, ghmcGeoJSON, alerts, loading, error, lastUpdated } = useWeatherData()
 
+  const errorTitle = error?.type === 'network'
+    ? 'Network issue'
+    : error?.type === 'data'
+      ? 'Data fetch failed'
+      : 'Error'
+
   // When user picks a station from search, fly map there
   const handleStationSelect = useCallback((station) => {
     setSelectedStation(station)
@@ -93,13 +99,13 @@ export default function App() {
       {/* ── Error toast ──────────────────────────────────── */}
       {error && !loading && stations.length === 0 && (
         <div
-          className="absolute bottom-28 left-3 right-3 z-20 rounded-2xl p-4 animate-fade-in bg-red-950/90 border border-red-500/30 backdrop-blur-[8px]"
+          className="absolute bottom-24 left-3 right-3 z-20 rounded-2xl p-4 animate-fade-in bg-red-950/90 border border-red-500/30 backdrop-blur-[8px]"
         >
           <div className="flex items-start gap-3">
             <span className="text-base shrink-0">⚠️</span>
             <div>
-              <div className="font-semibold text-sm text-red-300">Data fetch failed</div>
-              <div className="text-xs text-red-800 mt-0.5">{error}</div>
+              <div className="font-semibold text-sm text-red-300">{errorTitle}</div>
+              <div className="text-xs text-red-800 mt-0.5">{error?.message ?? String(error)}</div>
             </div>
           </div>
         </div>
