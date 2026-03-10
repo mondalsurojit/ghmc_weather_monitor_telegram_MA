@@ -1,8 +1,10 @@
 // ─── GHMC Weather Monitor — Service Worker ───────────────────
-// CACHE_VERSION is auto-stamped by vite.config.js on every build.
-// Manually bump it here only if deploying without `npm run build`.
+
 const CACHE_VERSION = 'v2026-03-09-1773093932678'
 const CACHE_NAME = `ghmc-weather-${CACHE_VERSION}`
+
+const TILE_CACHE = 'ghmc-tiles'
+const TILE_LIMIT = 300
 
 const STATIC_ASSETS = [
   '/',
@@ -17,15 +19,28 @@ const BYPASS_HOSTS = [
   'telangana.gov.in',
   'allorigins.win',
   'corsproxy.io',
-  'docs.google.com',        // Google Sheets CSV
+  'docs.google.com',
 ]
 
 // Local paths that must always be fetched live — never cached
 const BYPASS_PATHS = [
-  '/api/weather',           // Vercel serverless
+  '/api/weather',
 ]
 
-// ── Install: pre-cache shell ──────────────────────────────────
+// ── Utility: enforce tile cache limit ────────────────────────
+async function enforceTileLimit() {
+  const cache = await caches.open(TILE_CACHE)
+  const keys = await cache.keys()
+
+  if (keys.length > TILE_LIMIT) {
+    const deleteCount = keys.length - TILE_LIMIT
+    for (let i = 0; i < deleteCount; i++) {
+      await cache.delete(keys[i])
+    }
+  }
+}
+
+// ── Install: pre-cache shell ─────────────────────────────────
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -37,7 +52,7 @@ self.addEventListener('install', event => {
   )
 })
 
-// ── Activate: purge old app caches (tile cache is preserved) ──
+// ── Activate: purge old app caches (tile cache preserved) ───
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys()
@@ -56,12 +71,20 @@ self.addEventListener('activate', event => {
   )
 })
 
-// ── Fetch ─────────────────────────────────────────────────────
+// ── Fetch ───────────────────────────────────────────────────
 self.addEventListener('fetch', event => {
   const url = new URL(event.request.url)
 
-  // Ignore non-http(s) requests (chrome-extension, data, blob etc.)
+  // Ignore non-http(s) requests
   if (url.protocol !== 'http:' && url.protocol !== 'https:') return
+
+  // ── Navigation fallback for SPA ───────────────────────────
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request).catch(() => caches.match('/index.html'))
+    )
+    return
+  }
 
   // Always bypass — external data hosts
   if (BYPASS_HOSTS.some(h => url.hostname.includes(h))) {
@@ -87,14 +110,20 @@ self.addEventListener('fetch', event => {
     return
   }
 
-  // Tile-aware caching — separate cache, survives version bumps
+  // ── Tile-aware caching (limit 300) ─────────────────────────
   if (url.hostname.includes('cartocdn.com')) {
     event.respondWith(
       caches.match(event.request).then(cached => {
         if (cached) return cached
+
         return fetch(event.request).then(response => {
           const clone = response.clone()
-          caches.open('ghmc-tiles').then(cache => cache.put(event.request, clone))
+
+          caches.open(TILE_CACHE).then(async cache => {
+            await cache.put(event.request, clone)
+            await enforceTileLimit()
+          })
+
           return response
         })
       })
@@ -102,29 +131,43 @@ self.addEventListener('fetch', event => {
     return
   }
 
-  // Cache-first for everything else (static assets, fonts, Leaflet)
+  // ── Cache-first for static assets ─────────────────────────
   event.respondWith(
     caches.match(event.request).then(cached => {
       if (cached) return cached
 
       return fetch(event.request).then(response => {
+
+        const contentType = response.headers.get('content-type') || ''
+
         if (
           response.ok &&
           event.request.method === 'GET' &&
-          !url.pathname.includes('sw.js')
+          !url.pathname.includes('sw.js') &&
+          event.request.destination !== 'document' &&
+          (
+            contentType.includes('javascript') ||
+            contentType.includes('css') ||
+            contentType.includes('image') ||
+            contentType.includes('font')
+          )
         ) {
           const clone = response.clone()
           caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone))
         }
+
         return response
       }).catch(() => cached || new Response('', { status: 503 }))
     })
   )
 })
 
-// ── Message: version check ────────────────────────────────────
+// ── Message: version check ───────────────────────────────────
 self.addEventListener('message', event => {
   if (event.data?.type === 'GET_VERSION') {
-    event.ports[0]?.postMessage({ version: CACHE_VERSION, cache: CACHE_NAME })
+    event.ports[0]?.postMessage({
+      version: CACHE_VERSION,
+      cache: CACHE_NAME
+    })
   }
 })
