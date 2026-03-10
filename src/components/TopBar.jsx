@@ -58,13 +58,13 @@ export default function TopBar({ stations, alerts, onStationSelect, onBellClick,
 
   return (
     <div
-      className="absolute top-0 left-0 right-0 z-[1000]"
+      className="absolute top-0 left-0 right-0"
       style={{
         paddingTop: 'env(safe-area-inset-top, 12px)',
         background: 'linear-gradient(to bottom, #080f1af2 0%, #080f1ab3, 0.70) 80%, transparent 100%)',
       }}
     >
-      <div className="px-3 pt-3 pb-4 flex items-center gap-2">
+      <div className="px-3 pt-3 pb-2 flex items-center gap-2">
 
         {/* ── Search bar ─────────────────────────────────── */}
         <div ref={wrapRef} className="relative flex-1">
@@ -111,13 +111,9 @@ export default function TopBar({ stations, alerts, onStationSelect, onBellClick,
 
           {/* ── Dropdown results ─────────────────────────── */}
           {open && (
-            <div
-              className={
-                "search-dropdown absolute top-12 left-0 right-0 rounded-2xl overflow-hidden shadow-2xl " +
-                "bg-slate-950/95 backdrop-blur-[16px] " +
-                "border border-sky-400/15 " +
-                "max-h-[55vw] overflow-y-auto z-50"
-              }
+            <div className="search-dropdown absolute top-12 left-0 right-0 rounded-2xl
+                            overflow-hidden shadow-2xl bg-slate-950/95 backdrop-blur-[16px]
+                            border border-sky-400/15 max-h-[55vw] overflow-y-auto z-10"
             >
               {results.map((s, i) => (
                 <button
@@ -173,21 +169,23 @@ export default function TopBar({ stations, alerts, onStationSelect, onBellClick,
       </div>
 
       {/* ── Status bar ─────────────────────────────────────────── */}
-      {timeStr && !loading && (
-        <div
-          className="mx-3 mb-1 flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-950/60 backdrop-blur-[8px] border border-white/5"
-        >
-          <div className="animate-pulse-glow w-1.5 h-1.5 rounded-full bg-green-400 shrink-0" />
-          <span className="text-[8px] text-slate-600 font-mono tracking-wider">
-            {stations.length} STATIONS · {timeStr}
-          </span>
-          {alertCount > 0 && (
-            <span className="text-[8px] font-mono tracking-wider ml-auto" style={{ color: badgeColor }}>
-              {severeCount > 0 ? `🚨 ${severeCount} SEVERE` : ''}{severeCount > 0 && warningCount > 0 ? '  ' : ''}{warningCount > 0 ? `⚠️ ${warningCount} WARNING` : ''}
+      {
+        timeStr && !loading && (
+          <div
+            className="mx-3 mb-1 flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-950/60 backdrop-blur-[8px] border border-white/5"
+          >
+            <div className="animate-pulse-glow w-1.5 h-1.5 rounded-full bg-green-400 shrink-0" />
+            <span className="text-[8px] text-slate-600 font-mono tracking-wider">
+              {stations.length} STATIONS · {timeStr}
             </span>
-          )}
-        </div>
-      )}
-    </div>
+            {alertCount > 0 && (
+              <span className="text-[8px] font-mono tracking-wider ml-auto" style={{ color: badgeColor }}>
+                {severeCount > 0 ? `🚨 ${severeCount} SEVERE` : ''}{severeCount > 0 && warningCount > 0 ? '  ' : ''}{warningCount > 0 ? `⚠️ ${warningCount} WARNING` : ''}
+              </span>
+            )}
+          </div>
+        )
+      }
+    </div >
   )
 }

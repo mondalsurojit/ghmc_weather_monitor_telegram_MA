@@ -29,7 +29,7 @@ export default function MetricSwitcher({ activeMetric, onChange, stations }) {
 
   return (
     <div
-      className="absolute bottom-0 left-0 right-0 z-[1000]"
+      className="absolute bottom-0 left-0 right-0 z-10"
       style={{
         paddingBottom: 'env(safe-area-inset-bottom, 12px)',
         background: 'linear-gradient(to top, #080f1a 0%, #080f1ad9 70%, transparent 100%)',
@@ -48,7 +48,7 @@ export default function MetricSwitcher({ activeMetric, onChange, stations }) {
               style={{
                 background: isActive
                   ? `linear-gradient(135deg, ${m.dimColor}, ${m.color}22)`
-                  : '#0c1426b3.70)',
+                  : 'rgba(12, 20, 38, 0.7)',
                 border: `1px solid ${isActive ? m.color + '55' : 'rgba(255,255,255,0.06)'}`,
                 boxShadow: isActive ? `0 0 20px ${m.color}20, inset 0 1px 0 ${m.color}20` : 'none',
                 transform: isActive ? 'translateY(-2px)' : 'translateY(0)'

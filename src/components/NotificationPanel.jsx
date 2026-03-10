@@ -80,7 +80,7 @@ export default function NotificationPanel({ alerts, lastUpdated, onClose }) {
 
   return (
     <div
-      className="absolute inset-0 z-[3000] flex flex-col justify-end bg-black/55 backdrop-blur-[6px]"
+      className="absolute inset-0 z-40 flex flex-col justify-end bg-black/55 backdrop-blur-[6px]"
       onPointerDown={handleBackdrop}
     >
       <div

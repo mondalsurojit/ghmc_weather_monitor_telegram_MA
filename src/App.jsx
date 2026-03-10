@@ -67,7 +67,7 @@ export default function App() {
       {/* ── Loading overlay ──────────────────────────────── */}
       {loading && (
         <div
-          className="absolute inset-0 z-[2000] flex items-center justify-center bg-slate-950/80 backdrop-blur-[6px]"
+          className="absolute inset-0 z-50 flex items-center justify-center bg-slate-950/80 backdrop-blur-[6px]"
         >
           <div className="text-center">
             <div className="text-[40px] mb-3">🌦️</div>
@@ -93,7 +93,7 @@ export default function App() {
       {/* ── Error toast ──────────────────────────────────── */}
       {error && !loading && stations.length === 0 && (
         <div
-          className="absolute bottom-28 left-3 right-3 z-[1500] rounded-2xl p-4 animate-fade-in bg-red-950/90 border border-red-500/30 backdrop-blur-[8px]"
+          className="absolute bottom-28 left-3 right-3 z-20 rounded-2xl p-4 animate-fade-in bg-red-950/90 border border-red-500/30 backdrop-blur-[8px]"
         >
           <div className="flex items-start gap-3">
             <span className="text-base shrink-0">⚠️</span>
